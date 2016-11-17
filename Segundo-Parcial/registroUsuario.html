@@ -1,0 +1,72 @@
+		<nav>
+         <ul class="nav masthead-nav">
+		   <a class="btn btn-info " ng-click="Admin()" ><span >&nbsp;</span>Administrador</a>
+		   <a class="btn btn-info " ng-click="Comprador()" ><span >&nbsp;</span>Comprador</a>
+		   <a class="btn btn-info " ng-click="Vendedor()" ><span >&nbsp;</span>Vendedor</a>
+         </ul>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <form name="FormRegistro" novalidate>
+		<p>
+			<input type="text" name="nombreuser" ng-model="usuario.nombreuser" placeholder="ingrese mail" required>
+			<br/>
+			<span ng-show="FormRegistro.nombreuser.$error.required">El mail es requerido</span>
+		</p>
+
+		<p>
+			<input type="text" name="dni" ng-model="usuario.dni" placeholder="ingrese Nombre" required>
+			<br/>
+			<span ng-show="FormRegistro.dni.$error.required">El Nombre es requerido</span>
+		</p>
+		<!--
+		<p>
+			<input type="text" name="tipo" ng-model="usuario.tipo" placeholder="ingrese Tipo" value="" required>
+			<br/>
+			<span ng-show="FormRegistro.tipo.$error.required">El Tipo es requerido</span>
+		</p>
+		-->
+		<!-- <p>				
+			<select type="text" name="tipo" ng-model="usuario.tipo" placeholder="ingrese Tipo" value="" required>
+  				 <option value="Admin">Admin</option>
+                 <option value="Comprador">Comprador</option>
+                 <option value="Vendedor" >Vendedor</option>
+                 </select>
+            <span ng-show="FormRegistro.tipo.$error.required">El Tipo es requerido</span>
+		</p> -->
+
+		<p>
+			<input type="radio" name="tipo" ng-model="usuario.tipo" placeholder="ingrese tipo" value="Admin"     />
+			<label class="radio-label">Administrador</label><br>
+			<input type="radio" name="tipo" ng-model="usuario.tipo" placeholder="ingrese tipo" value="Comprador" />
+			<label class="radio-label">Comprador</label><br>
+			<input type="radio" name="tipo" ng-model="usuario.tipo" placeholder="ingrese tipo" value="Vendedor"  />
+			<label class="radio-label">Vendedor</label><br>
+		</p>
+
+		<p>
+			<input type="password" name="password" ng-model="usuario.password" ng-minlength="7" placeholder="ingrese contrasena" required>
+			<br/>
+			<span ng-show="FormRegistro.password.$error.required">La contrasena es requerida</span>
+			<span ng-show="FormRegistro.password.$error.minlength">La contrasena debe tener como minimo 7 caracteres</span>
+		</p>
+
+		<p>
+			<input type="password" name="copiapassword" ng-model="usuario.copiapassword" ng-minlength="7" placeholder="reingrese contrasena" required>
+			<br/>
+			<span ng-show="FormRegistro.password.$error.required">La contrasena es requerida</span>
+			<span ng-show="FormRegistro.password.$error.minlength">La contrasena debe tener como minimo 7 caracteres</span>
+		</p>
+
+		<p>
+		  <a class="btn btn-info " ng-disabled="FormRegistro.$dirty && FormRegistro.$invalid && 
+		  FormRegistro.password.minlength != 7 && FormRegistro.password != FormRegistro.copiapassword" ng-click="Registrar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Registrarse</a>
+		</p>
+
+		</form>
+			
+		</div>

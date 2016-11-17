@@ -1,0 +1,41 @@
+
+		           <div class="divScroll">
+					<div class="CajaInicio animated bounceInRight">
+							<h1>Listado de usuarios</h1>
+							<input type="search" ng-model="buscador" placeholder="Buscar usuario">		
+							<!-- id="listaproductos" -->
+								
+								<table class='table table-hover table-responsive' id="listaUsuarios">
+									<thead>
+										<tr>
+															
+											<th>  Mail     </th>
+											<th>  Nombre         </th>
+											<th>  Password    </th>
+											<th>  Tipo        </th>
+											<th>  BORRAR      </th>
+											<th>  MODIFICAR        </th>
+										</tr> 
+									</thead>
+									
+									<tr ng-repeat="usuario in ListadoUsuario | filter:buscador as resultado">
+
+										<!-- <td><img  class='fotoGrilla' ng-src="producto.avatar" /></td> -->
+							
+										<td>{{usuario.nombreuser}}</td>
+										<td>{{usuario.dni}}</td>
+										<td>{{usuario.password}}</td>
+										<td>{{usuario.tipo}}</td>
+
+										<td><button class='btn btn-danger' name='Borrar' ng-click="Borrar(usuario)">   <span class='glyphicon glyphicon-remove-circle'>&nbsp;</span>Borrar</button></td>
+
+										<td><button class='btn btn-warning' name='Modificar' ui-sref="usuario.modificacion({id:usuario.id, nombreuser:usuario.nombreuser, dni:usuario.dni, password:usuario.password,tipo:usuario.tipo})"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Modificar</button></td>
+															
+									</tr>
+									
+								</table>
+								<div ng-if="resultado.length==0">
+									No hay productos con ese critero.
+								</div>
+							</div>
+						</div>

@@ -1,0 +1,44 @@
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h3 class="masthead-brand">Segundo Parcial</h3>
+          <nav>
+            <ul class="nav masthead-nav">
+              <li><a ui-sref="inicio()">Inicio</a></li>
+              <li><a ui-sref="usuario.login()">Login</a></li>
+              <li><a ui-sref="usuario.registro()">Registrarse</a></li>
+              <li><a ui-sref="directiva()">Directiva</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+<div>
+  <h3>{{titulo}}</h3>
+
+  <utn-saludo></utn-saludo>
+  <div utn-saludo></div>
+  <div class="utn-saludo"></div>
+
+  <utn-saludo-dos></utn-saludo-dos>
+  <div utn-saludo-dos></div>
+  <div class="utn-saludo-dos"></div>
+
+  <!-- la directiva reemplaza todo el tag de comentario usando el atributo relplace en true -->
+  <!-- directive: utn-saludo-dos -->
+
+
+  <div class="utn-titulo"></div>
+
+  <div class="utn-titulo-url"></div>
+
+  <utn-titulo-parametro miparametro="Directiva con parametro"></div>
+
+  <muestro-productos ng-repeat="producto in Listadoproductos"banderanombre="{{producto.descripcion}}" banderaimagen="{{producto.precio}}"></muestro-productos>
+
+  <muestro-product ng-repeat="producto in Listadoproductos" labanderaporparametro="bandera"></directiva-bandera-obj>
+
+</div>
